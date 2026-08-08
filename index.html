@@ -38,7 +38,7 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <!-- <li><a href="#experience">Experience</a></li> -->
     <li><a href="assets/cv.pdf">CV</a></li>
   </ul>
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme" title="Switch colour theme"></button>
@@ -58,23 +58,22 @@
 
       <p>
         I work on <strong>reinforcement learning</strong> and <strong>world models</strong> for robotics.
-        I am interested in agents that stay reliable exactly where fixed policies break down:
+        I am interested in agents that stay reliable in difficult situations:
         over <strong>long horizons</strong>, <strong>off the training distribution</strong>, and in the
         moments when the right move is to <strong>plan at test time</strong> rather than react.
       </p>
 
-      <p>
+      <!-- <p>
         Most recently I proposed <a href="#ttgs">Test-Time Graph Search</a>, which turns an already-trained
         goal-conditioned value function into a graph a policy can plan over — no retraining, no extra
         supervision. It took long-horizon success rates on OGBench tasks from near zero to near ceiling.
         I am also building <a href="#rh-bench">rh-bench</a>, a benchmark for detecting reward hacking in
         LLM agents.
-      </p>
+      </p> -->
 
       <p>
         I am starting my master's at the University of Toronto this September, supported by the Ontario
-        Vector Institute AI Master's Entrance Scholarship. I am always glad to talk about
-        planning, offline RL, and where learned world models stop being trustworthy.
+        Vector Institute AI Master's Entrance Scholarship. Happy to chat about related topics!
       </p>
 
       <ul class="links">
@@ -82,7 +81,7 @@
              regexing the raw source do not. Works with JavaScript disabled. -->
         <li><a href="mailto:junwei&#46;quan&#64;mail&#46;utoronto&#46;ca">Email</a></li>
         <!-- TODO(junwei): replace with your real Google Scholar profile URL. -->
-        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="https://scholar.google.com/citations?user=oELpqRUAAAAJ&hl=en">Google Scholar</a></li>
         <li><a href="https://github.com/junwei0102">GitHub</a></li>
         <li><a href="https://linkedin.com/in/jwquan0102">LinkedIn</a></li>
         <li><a href="assets/cv.pdf">CV</a></li>
@@ -99,46 +98,37 @@
     <h2>Research</h2>
 
     <p class="lede">
-      A policy trained offline looks fine on the tasks it was scored on and falls apart on the ones it
-      wasn't. I want to understand why that happens and what an agent can do about it at the moment of
-      failure. Three threads:
+      AI systems can look capable on the problems they were trained and evaluated on, 
+      then become surprisingly brittle when conditions change or decisions stretch over time. 
+      I want to understand where that reliability breaks down and how an agent can recognize, reason through, and recover from those failures at test time. Three threads:
     </p>
+    
 
     <div class="topic">
       <h3>Long-horizon control</h3>
       <p>
-        Errors in a learned value function compound. Over a few dozen steps that is noise; over a few
-        hundred it is the whole trajectory. Offline goal-conditioned agents fail on long tasks not because
-        they lack the skills but because they try to execute the entire task as one shot, with no way to
-        recover once the value estimate has drifted. I work on decomposing tasks into subgoals the policy
-        can actually reach, so that a long horizon becomes a chain of short ones.
+        AI systems are often good at making the next decision, but much less reliable when success depends on hundreds of decisions working together. 
+        Small mistakes accumulate, early assumptions become outdated, and a system can drift far from its original goal without realizing it.
       </p>
-      <p class="topic-ref">See <a href="#ttgs">TTGS</a> — ICML 2026</p>
+      <!-- <p class="topic-ref">See <a href="#ttgs">TTGS</a> — ICML 2026</p> -->
     </div>
 
     <div class="topic">
       <h3>Out-of-distribution behaviour</h3>
       <p>
-        The interesting cases are the ones the dataset never contained. Stitching demands that an agent
-        compose fragments of separate trajectories into a route nobody demonstrated — and that is precisely
-        where offline value estimates are least trustworthy. The same fault line shows up in agent
-        evaluation: a proxy metric that tracks intent inside the training regime can come apart from it
-        outside, which is the gap reward hacking lives in. I care about detecting that gap, not just
-        reporting the score.
+        The hardest situations are often the ones an AI system has never seen before. 
+        A model may perform extremely well when new inputs resemble its training data, yet become unreliable when it encounters unfamiliar combinations, environments, or strategies.
       </p>
-      <p class="topic-ref">See <a href="#ttgs">TTGS</a>, <a href="#rh-bench">rh-bench</a></p>
+      <!-- <p class="topic-ref">See <a href="#ttgs">TTGS</a></p> -->
     </div>
 
     <div class="topic">
       <h3>Test-time planning</h3>
       <p>
-        A trained value function already contains a map of the environment; it is just stored in a form the
-        policy can't search. Recovering that structure at inference — building a graph from offline states,
-        reading learned values as distances, and running a shortest-path search over them — buys back the
-        deliberation a reactive policy gives up, without touching the weights. I think a great deal of the
-        competence we currently try to train into policies is better spent at test time.
+        Much of what a model learns is richer than what appears in its immediate output. 
+        Its representations may already contain useful information about what is possible, what is nearby, or which paths are promising—but a single forward pass gives the model little opportunity to explore that structure.
       </p>
-      <p class="topic-ref">See <a href="#ttgs">TTGS</a> — ICML 2026</p>
+      <!-- <p class="topic-ref">See <a href="#ttgs">TTGS</a> — ICML 2026</p> -->
     </div>
   </section>
 
@@ -161,11 +151,11 @@
         <span class="date">2026.05</span>
         <span><a href="#ttgs">TTGS</a> accepted to <strong>ICML 2026</strong>.</span>
       </li>
-      <li>
+      <!-- <li>
         <span class="date">2026.05</span>
         <span>Started work on <a href="#rh-bench">rh-bench</a>, a benchmark for reward-hacking detection in
           LLM agents.</span>
-      </li>
+      </li> -->
       <li>
         <span class="date">2025.05</span>
         <span>Awarded an <strong>NSERC USRA</strong> and joined the
@@ -181,8 +171,8 @@
 
     <ol class="pubs">
       <li id="ttgs">
-        <h3>Long-Horizon Planning for Offline Goal-Conditioned RL via Test-Time Graph Search</h3>
-        <p class="authors"><strong>Junwei Quan</strong>*, et al.</p>
+        <h3>Test-Time Graph Search for Goal-Conditioned Reinforcement Learning</h3>
+        <p class="authors">E Opryshko*, <strong>J. Quan</strong>*, et al.</p>
         <p class="venue"><span class="tag">ICML 2026</span></p>
         <p class="tldr">
           Samples states from an offline dataset into a weighted graph, reinterprets a pre-trained
@@ -197,22 +187,19 @@
 
       <li id="mdm-prime">
         <h3>MDM-Prime-v2: Subtoken Representation and Scalable Training for Diffusion Language Models</h3>
-        <!-- TODO(junwei): swap the ellipses for the real co-author names on all three entries. -->
-        <p class="authors">…, <strong>Junwei Quan</strong>, et al.</p>
-        <p class="venue"><span class="tag">EMNLP 2026</span> <span class="status">under review</span></p>
+        <p class="authors">CH. Chao, WF. Sun, <strong>J. Quan</strong>, et al.</p>
+        <p class="venue"><span class="tag">arxiv preprint</span></p>
         <p class="tldr">
-          Introduces binary encoding and index shuffling on top of MDM-Prime's partial-mask generation
-          framework, making subtoken information content more uniform under BPE and giving a more stable
-          design surface for token granularity. Improves 170M average accuracy on eight zero-shot
-          commonsense reasoning tasks from 40.02% to 43.76%; the 1.1B model reaches 49.42% after 540B
-          tokens and cuts generation perplexity from 77.24 to 53.06 at 1024 sampling steps.
+          We show that how tokens are represented matters for scaling diffusion language models. 
+          MDM-Prime-v2 uses binary sub-token representations and index shuffling to make partial masking more effective, 
+          leading to stronger scaling and the best average zero-shot performance across eight reasoning benchmarks among comparable 1.1B-scale autoregressive and diffusion models.
         </p>
       </li>
 
-      <li id="rh-bench">
+      <!-- <li id="rh-bench">
         <h3>rh-bench: An LLM Agent Safety Benchmark for Reward Hacking Detection</h3>
         <p class="authors"><strong>Junwei Quan</strong>*, et al.</p>
-        <p class="venue"><span class="tag">AAAI 2026</span> <span class="status">in preparation</span></p>
+        <p class="venue"><span class="tag">arxiv preprint</span></p>
         <p class="tldr">
           A unified benchmark for reward hacking, reward tampering, and deployment-time monitoring evasion
           in LLM agents. Failures that satisfy a proxy metric while diverging from user intent are cast as a
@@ -220,7 +207,7 @@
           93–94% accuracy and AUC-ROC above 0.96 overall — but drops 9–13 points on agentic trajectories,
           which is where the open problem is.
         </p>
-      </li>
+      </li> -->
     </ol>
 
     <p class="also">
@@ -229,8 +216,7 @@
     </p>
   </section>
 
-  <!-- ============================ EXPERIENCE ============================ -->
-  <section id="experience">
+  <!-- <section id="experience">
     <h2>Experience</h2>
 
     <div class="entry">
@@ -269,7 +255,7 @@
         generation-quality evaluation.
       </p>
     </div>
-  </section>
+  </section> -->
 
   <!-- ============================ EDUCATION ============================ -->
   <section id="education">
@@ -290,7 +276,6 @@
     <ul class="awards">
       <li><span class="date">2026</span> <span>Ontario Vector Institute AI Master's Entrance Scholarship</span></li>
       <li><span class="date">2025</span> <span>NSERC USRA — Natural Sciences and Engineering Research Council of Canada</span></li>
-      <li><span class="date">2025</span> <span>Dean's Nomination, Faculty of Arts &amp; Science, University of Toronto</span></li>
     </ul>
   </section>
 
