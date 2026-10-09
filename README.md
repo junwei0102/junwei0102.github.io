@@ -18,11 +18,11 @@ Open `index.html` and edit the text. Sections are marked with banner comments
 top. Newest first.
 
 **Adding a paper** — copy an existing `<li>` in the `.pubs` list. Give it an `id` so
-other parts of the page can link to it. Once a paper has a URL, uncomment the
-`.pub-links` line inside the entry and fill it in:
+other parts of the page can link to it. Links go in the `.pub-links` line under the
+summary; drop any the paper doesn't have:
 
 ```html
-<p class="pub-links"><a href="…">paper</a> <a href="…">code</a> <a href="…">bibtex</a></p>
+<p class="pub-links"><a href="…">arXiv</a> <a href="…">project page</a> <a href="…">code</a></p>
 ```
 
 **Changing colours** — edit the tokens in `:root` in `style.css`. Each one is defined
@@ -60,4 +60,3 @@ git add -A && git commit -m "update" && git push
 
 - Replace the placeholder Google Scholar URL in `index.html` (search for `TODO`).
 - Verify the inferred months in the News section (search for `NOTE`).
-- Add paper / code links to the publication entries as they go public.
