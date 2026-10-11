@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Junwei Quan</title>
-<meta name="description" content="Junwei Quan — MScAC student in Applied Computing (AI) at the University of Toronto. Reinforcement learning and world models for robotics: long-horizon control, out-of-distribution generalization, and test-time planning.">
+<meta name="description" content="Junwei Quan — MScAC student in Applied Computing (AI) at the University of Toronto. Reinforcement learning and world models for robotics: long-horizon control, out-of-distribution generalization, and test-time planning. Also AI alignment and safety for large language models.">
 <meta name="author" content="Junwei Quan">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Junwei Quan">
-<meta property="og:description" content="Reinforcement learning and world models for robotics: long-horizon control, out-of-distribution generalization, and test-time planning.">
+<meta property="og:description" content="Reinforcement learning and world models for robotics: long-horizon control, out-of-distribution generalization, and test-time planning. Also AI alignment and safety for large language models.">
 <meta property="og:image" content="https://junwei0102.github.io/assets/junwei.jpg">
 <meta property="og:url" content="https://junwei0102.github.io/">
 <meta name="twitter:card" content="summary">
@@ -61,6 +61,8 @@
         I am interested in agents that stay reliable in difficult situations:
         over <strong>long horizons</strong>, <strong>off the training distribution</strong>, and in the
         moments when the right move is to <strong>plan at test time</strong> rather than react.
+        I also work on <strong>AI alignment and safety</strong> for large language models, from
+        post-training to deployed agents.
       </p>
 
       <!-- <p>
@@ -100,7 +102,7 @@
     <p class="lede">
       AI systems can look capable on the problems they were trained and evaluated on, 
       then become surprisingly brittle when conditions change or decisions stretch over time. 
-      I want to understand where that reliability breaks down and how an agent can recognize, reason through, and recover from those failures at test time. Three threads:
+      I want to understand where that reliability breaks down and how an agent can recognize, reason through, and recover from those failures at test time. Four threads:
     </p>
     
 
@@ -129,6 +131,16 @@
         Its representations may already contain useful information about what is possible, what is nearby, or which paths are promising—but a single forward pass gives the model little opportunity to explore that structure.
       </p>
       <!-- <p class="topic-ref">See <a href="#ttgs">TTGS</a> — ICML 2026</p> -->
+    </div>
+
+    <div class="topic">
+      <h3>Alignment and safety</h3>
+      <p>
+        A capable model is not necessarily one that does what we intend.
+        Its behaviour depends on choices made during post-training, and once it acts as an agent, it may game its objective, follow harmful instructions, or take unsafe actions, often in ways that are hard to notice from the outside.
+        Understanding how training shapes this behaviour, and detecting when it goes wrong, matters more as models gain autonomy.
+      </p>
+      <!-- <p class="topic-ref">See <a href="#rh-detect">RH-Detect</a></p> -->
     </div>
   </section>
 
