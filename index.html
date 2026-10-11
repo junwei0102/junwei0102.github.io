@@ -74,7 +74,7 @@
       </p> -->
 
       <p>
-        I am starting my master's at the University of Toronto this September, supported by the Ontario
+        I am currently a master's student at the University of Toronto, supported by the Ontario
         Vector Institute AI Master's Entrance Scholarship. Happy to chat about related topics!
       </p>
 
@@ -191,77 +191,88 @@
     <h2>Publications</h2>
     <p class="note">* denotes equal contribution.</p>
 
-    <ol class="pubs">
-      <li id="wmpa">
-        <h3>World-Model Policy Arbiter for Goal-Conditioned Reinforcement Learning</h3>
-        <p class="authors"><strong>J. Quan</strong>, E. Opryshko, N. Rhinehart, I. Gilitschenski</p>
-        <p class="venue"><span class="tag">arXiv preprint</span></p>
-        <p class="tldr">
-          No single offline goal-conditioned RL algorithm wins everywhere, so WMPA treats a bank of frozen
-          policies as a portfolio: it rolls each one out in a learned world model, scores the imagined
-          futures with a shared goal-conditioned value function, and runs the best policy for a short
-          commitment interval before choosing again — no retraining required. On 18 state-based OGBench
-          datasets, macro-average success rises from 44% (best single policy per dataset) to 58%, with
-          +33 points on <code>cube-double-play</code> and +36 on <code>scene-play</code>.
-        </p>
-        <p class="pub-links">
-          <a href="https://arxiv.org/abs/2610.10932">arXiv</a>
-          <a href="https://junwei0102.github.io/wmpa-webpage/">project page</a>
-          <a href="https://github.com/junwei0102/World-Model-Policy-Arbiter">code</a>
-        </p>
-      </li>
+    <div class="pub-group">
+      <h3><span class="group-num">01</span> Reinforcement learning &amp; world models</h3>
+      <p class="group-desc">Test-time planning and policy selection for goal-conditioned agents.</p>
+      <ol class="pubs">
+        <li id="wmpa">
+          <h4>World-Model Policy Arbiter for Goal-Conditioned Reinforcement Learning</h4>
+          <p class="authors"><strong>J. Quan</strong>, E. Opryshko, N. Rhinehart, I. Gilitschenski</p>
+          <p class="venue"><span class="tag">arXiv preprint</span></p>
+          <p class="tldr">
+            No single offline goal-conditioned RL algorithm wins everywhere, so WMPA treats a bank of frozen
+            policies as a portfolio: it rolls each one out in a learned world model, scores the imagined
+            futures with a shared goal-conditioned value function, and runs the best policy for a short
+            commitment interval before choosing again — no retraining required. On 18 state-based OGBench
+            datasets, macro-average success rises from 44% (best single policy per dataset) to 58%, with
+            +33 points on <code>cube-double-play</code> and +36 on <code>scene-play</code>.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2610.10932">arXiv</a>
+            <a href="https://junwei0102.github.io/wmpa-webpage/">project page</a>
+            <a href="https://github.com/junwei0102/World-Model-Policy-Arbiter">code</a>
+          </p>
+        </li>
 
-      <li id="rh-detect">
-        <h3>RH-Detect: A Unified Benchmark for Reward Hacking Detection</h3>
-        <p class="authors"><strong>J. Quan</strong>*, E. Opryshko*, R. Subramani, I. Gilitschenski</p>
-        <p class="venue"><span class="tag">arXiv preprint</span></p>
-        <p class="tldr">
-          Brings reward-hacking-relevant subsets of eleven public datasets — 92,761 rows across six
-          behaviour categories — into one schema, and evaluates off-the-shelf language models as detectors
-          with no additional training. The best reaches a pooled AUROC of 0.962 and accuracy above 93%, but
-          the four strongest models are 10.7–15.9 points less accurate on multi-turn tool-use trajectories
-          than elsewhere — a key gap for deployment-time monitoring. Leave-one-source-out SFT on the
-          benchmark improves AUROC on five of six held-out sources.
-        </p>
-        <p class="pub-links">
-          <a href="https://arxiv.org/abs/2610.10947">arXiv</a>
-        </p>
-      </li>
+        <li id="ttgs">
+          <h4>Test-Time Graph Search for Goal-Conditioned Reinforcement Learning</h4>
+          <p class="authors">E. Opryshko*, <strong>J. Quan</strong>*, C. Voelcker, Y. Du, I. Gilitschenski</p>
+          <p class="venue"><span class="tag">ICML 2026</span></p>
+          <p class="tldr">
+            Samples states from an offline dataset into a weighted graph, reinterprets a pre-trained
+            goal-conditioned value function as a distance signal, and runs Dijkstra search to emit executable
+            subgoal sequences — letting a fixed policy decompose and plan long-horizon tasks with no
+            additional training. On OGBench <code>pointmaze-giant-stitch-v0</code>, HIQL goes from 0.0% to
+            80.9% and GCIQL from 0.0% to 98.0%.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2510.07257">arXiv</a>
+            <a href="https://ktolnos.github.io/ttgs/">project page</a>
+            <a href="https://github.com/ktolnos/TTGS">code</a>
+          </p>
+        </li>
+      </ol>
+    </div>
 
-      <li id="ttgs">
-        <h3>Test-Time Graph Search for Goal-Conditioned Reinforcement Learning</h3>
-        <p class="authors">E. Opryshko*, <strong>J. Quan</strong>*, C. Voelcker, Y. Du, I. Gilitschenski</p>
-        <p class="venue"><span class="tag">ICML 2026</span></p>
-        <p class="tldr">
-          Samples states from an offline dataset into a weighted graph, reinterprets a pre-trained
-          goal-conditioned value function as a distance signal, and runs Dijkstra search to emit executable
-          subgoal sequences — letting a fixed policy decompose and plan long-horizon tasks with no
-          additional training. On OGBench <code>pointmaze-giant-stitch-v0</code>, HIQL goes from 0.0% to
-          80.9% and GCIQL from 0.0% to 98.0%.
-        </p>
-        <p class="pub-links">
-          <a href="https://arxiv.org/abs/2510.07257">arXiv</a>
-          <a href="https://ktolnos.github.io/ttgs/">project page</a>
-          <a href="https://github.com/ktolnos/TTGS">code</a>
-        </p>
-      </li>
+    <div class="pub-group">
+      <h3><span class="group-num">02</span> Language model training &amp; safety</h3>
+      <p class="group-desc">Training language models, from pretraining to RL post-training, and catching unsafe
+        behaviour once they are deployed.</p>
+      <ol class="pubs">
+        <li id="rh-detect">
+          <h4>RH-Detect: A Unified Benchmark for Reward Hacking Detection</h4>
+          <p class="authors"><strong>J. Quan</strong>*, E. Opryshko*, R. Subramani, I. Gilitschenski</p>
+          <p class="venue"><span class="tag">arXiv preprint</span></p>
+          <p class="tldr">
+            Brings reward-hacking-relevant subsets of eleven public datasets — 92,761 rows across six
+            behaviour categories — into one schema, and evaluates off-the-shelf language models as detectors
+            with no additional training. The best reaches a pooled AUROC of 0.962 and accuracy above 93%, but
+            the four strongest models are 10.7–15.9 points less accurate on multi-turn tool-use trajectories
+            than elsewhere — a key gap for deployment-time monitoring. Leave-one-source-out SFT on the
+            benchmark improves AUROC on five of six held-out sources.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2610.10947">arXiv</a>
+          </p>
+        </li>
 
-      <li id="mdm-prime">
-        <h3>MDM-Prime-v2: Binary Encoding and Index Shuffling Enable Scaling of Diffusion Language Models</h3>
-        <p class="authors">CH. Chao, WF. Sun, <strong>J. Quan</strong>, CY. Lee, R. G. Krishnan</p>
-        <p class="venue"><span class="tag">EMNLP 2026</span><span class="status">main conference</span></p>
-        <p class="tldr">
-          We show that how tokens are represented matters for scaling diffusion language models. 
-          MDM-Prime-v2 uses binary sub-token representations and index shuffling to make partial masking more effective, 
-          leading to stronger scaling and the best average zero-shot performance across eight reasoning benchmarks among comparable 1.1B-scale autoregressive and diffusion models.
-        </p>
-        <p class="pub-links">
-          <a href="https://arxiv.org/abs/2603.16077">arXiv</a>
-          <a href="https://chen-hao-chao.github.io/mdm-prime-v2/">project page</a>
-          <a href="https://github.com/chen-hao-chao/mdm-prime-v2">code</a>
-        </p>
-      </li>
-    </ol>
+        <li id="mdm-prime">
+          <h4>MDM-Prime-v2: Binary Encoding and Index Shuffling Enable Scaling of Diffusion Language Models</h4>
+          <p class="authors">CH. Chao, WF. Sun, <strong>J. Quan</strong>, CY. Lee, R. G. Krishnan</p>
+          <p class="venue"><span class="tag">EMNLP 2026</span><span class="status">main conference</span></p>
+          <p class="tldr">
+            We show that how tokens are represented matters for scaling diffusion language models. 
+            MDM-Prime-v2 uses binary sub-token representations and index shuffling to make partial masking more effective, 
+            leading to stronger scaling and the best average zero-shot performance across eight reasoning benchmarks among comparable 1.1B-scale autoregressive and diffusion models.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2603.16077">arXiv</a>
+            <a href="https://chen-hao-chao.github.io/mdm-prime-v2/">project page</a>
+            <a href="https://github.com/chen-hao-chao/mdm-prime-v2">code</a>
+          </p>
+        </li>
+      </ol>
+    </div>
 
     <p class="also">
       Also: an <span class="tag">ICSE 2025</span> demo paper and an <span class="tag">MO2RE 2025</span>

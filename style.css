@@ -82,7 +82,7 @@ body {
 
 img { max-width: 100%; display: block; }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.22; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.22; }
 
 p { margin: 0 0 1.05em; }
 
@@ -320,6 +320,33 @@ section > h2 {
   margin-bottom: 2rem;
 }
 
+/* Papers are grouped by area: a numbered heading and a one-line description,
+   then that area's entries. */
+.pub-group + .pub-group { margin-top: 3.6rem; }
+
+.pub-group > h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem;
+}
+
+.group-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.group-desc {
+  font-size: 0.93rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.9rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
 .pubs > li {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -329,8 +356,8 @@ section > h2 {
 
 .pubs > li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-.pubs h3 {
-  font-size: 1.14rem;
+.pubs h4 {
+  font-size: 1.1rem;
   margin: 0 0 0.4rem;
   line-height: 1.34;
 }
