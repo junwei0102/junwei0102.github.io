@@ -82,7 +82,6 @@
         <!-- The @ is HTML-entity encoded: browsers decode it, naive address scrapers
              regexing the raw source do not. Works with JavaScript disabled. -->
         <li><a href="mailto:junwei&#46;quan&#64;mail&#46;utoronto&#46;ca">Email</a></li>
-        <!-- TODO(junwei): replace with your real Google Scholar profile URL. -->
         <li><a href="https://scholar.google.com/citations?user=oELpqRUAAAAJ&hl=en">Google Scholar</a></li>
         <li><a href="https://github.com/junwei0102">GitHub</a></li>
         <li><a href="https://linkedin.com/in/jwquan0102">LinkedIn</a></li>
@@ -149,6 +148,12 @@
     <h2>News</h2>
     <!-- NOTE(junwei): months below are inferred from the date ranges on your CV. Correct any that are off. -->
     <ul class="news">
+      <li>
+        <span class="date">2026.10</span>
+        <span>Two more preprints on arXiv: <a href="#two-clocks">Two Clocks</a>, on rollout batch size and
+          learning-rate scaling in RLVR, and <a href="#skillscreen">SkillScreen</a>, high-recall screening of
+          malicious agent skills.</span>
+      </li>
       <li>
         <span class="date">2026.10</span>
         <span>Two new preprints on arXiv: <a href="#wmpa">WMPA</a>, test-time policy arbitration with a
@@ -239,6 +244,45 @@
       <p class="group-desc">Training language models, from pretraining to RL post-training, and catching unsafe
         behaviour once they are deployed.</p>
       <ol class="pubs">
+        <li id="two-clocks">
+          <h4>Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards</h4>
+          <p class="authors">Y. Li*, <strong>J. Quan</strong>*, K. Qiu, K. Zhang, Y. Tao</p>
+          <p class="venue"><span class="tag">arXiv preprint</span></p>
+          <p class="tldr">
+            RLVR enlarges rollout batches to amortize costly generation and scales the learning rate by the
+            square root of the batch, a rule that is less understood when each rollout is split into several
+            optimizer steps. A two-clock framework separates the samples needed to make progress from those
+            consumed before collapse: beyond a learning-rate-dependent critical batch, larger batches learn more
+            slowly per sample, yet fail after roughly the same number of samples. GRPO experiments on
+            Qwen2.5-Math-1.5B across a 16× batch range support both predictions. The framework also gives a
+            schedule: start below the critical batch, then switch to a larger one before failure.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2610.18853">arXiv</a>
+          </p>
+        </li>
+
+        <li id="skillscreen">
+          <h4>SkillScreen: High-Recall Screening of Malicious Agent Skills with Decision Models</h4>
+          <p class="authors">J. Huang*, <strong>J. Quan</strong>*, S. Lyu, Z. Guo, Y. Ge</p>
+          <p class="venue"><span class="tag">arXiv preprint</span></p>
+          <p class="tldr">
+            Agent skills turn natural-language instructions into actions, so a practical screen must catch
+            nearly every malicious skill while keeping the review load manageable. SkillScreen is a compact
+            decision model that scores maliciousness directly from a skill's <code>SKILL.md</code> in a single
+            forward pass. On MaliciousSkillBench, it flags only 20–25% of benign skills at 99% recall on unseen
+            attack families, far fewer than a word-level classifier or prompted LLM judges. Unfamiliar benign
+            sources still raise false positives sharply, so catching new attacks does not yet mean reliably
+            screening new skill collections.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2610.17727">arXiv</a>
+            <a href="https://jerroldh.github.io/SkillScreen-webpage/">project page</a>
+            <a href="https://github.com/JerroldH/SkillScreen">code</a>
+            <a href="https://huggingface.co/SkillScreen">models</a>
+          </p>
+        </li>
+
         <li id="rh-detect">
           <h4>RH-Detect: A Unified Benchmark for Reward Hacking Detection</h4>
           <p class="authors"><strong>J. Quan</strong>*, E. Opryshko*, R. Subramani, I. Gilitschenski</p>
@@ -276,7 +320,8 @@
 
     <p class="also">
       Also: an <span class="tag">ICSE 2025</span> demo paper and an <span class="tag">MO2RE 2025</span>
-      paper, both in software engineering.
+      paper, both in software engineering. Full list on
+      <a href="https://scholar.google.com/citations?user=oELpqRUAAAAJ&hl=en">Google Scholar</a>.
     </p>
   </section>
 
@@ -349,6 +394,7 @@
  <div class="footer-inner">
   <p>
     <a href="mailto:junwei&#46;quan&#64;mail&#46;utoronto&#46;ca">Email</a> ·
+    <a href="https://scholar.google.com/citations?user=oELpqRUAAAAJ&hl=en">Google Scholar</a> ·
     <a href="https://github.com/junwei0102">GitHub</a> ·
     <a href="https://linkedin.com/in/jwquan0102">LinkedIn</a> ·
     <a href="assets/cv.pdf">CV</a>

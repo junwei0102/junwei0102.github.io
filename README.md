@@ -61,5 +61,4 @@ git add -A && git commit -m "update" && git push
 
 ## TODO
 
-- Replace the placeholder Google Scholar URL in `index.html` (search for `TODO`).
 - Verify the inferred months in the News section (search for `NOTE`).
